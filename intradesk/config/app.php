@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Intradesk'),
 
     /*
     |--------------------------------------------------------------------------
@@ -154,11 +154,11 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        Intradesk\Providers\AppServiceProvider::class,
+        Intradesk\Providers\AuthServiceProvider::class,
+        // Intradesk\Providers\BroadcastServiceProvider::class,
+        Intradesk\Providers\EventServiceProvider::class,
+        Intradesk\Providers\RouteServiceProvider::class,
 
     ],
 

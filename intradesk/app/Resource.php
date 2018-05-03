@@ -4,17 +4,17 @@ namespace Intradesk;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class Resource extends Model
 {
     // Table Name
-    protected $table = 'categories';
+    protected $table = 'resources';
     // Primary Key
     public $primaryKey = 'id';
     // Timestamps
     public $timestamps = true;
 
-    public function resources()
+    public function category()
     {
-        return $this->hasMany('Intradesk\Resource');
+        return $this->belongsTo('Intradesk\Category', 'category_id');
     }
 }

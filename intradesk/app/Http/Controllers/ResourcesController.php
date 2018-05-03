@@ -3,9 +3,10 @@
 namespace Intradesk\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Intradesk\Category;
+use Intradesk\Resource;
 
-class CategoriesController extends Controller
+
+class ResourcesController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -24,8 +25,8 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
-        return view('categories.index')->with('categories', $categories);
+        $resources = Resource::all();
+        return view('resources.index')->with('resources', $resources);
     }
 
     /**
@@ -35,7 +36,8 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-        return view('categories.create');
+        return view('resources.create');
+
     }
 
     /**
@@ -47,15 +49,19 @@ class CategoriesController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required'
+            'title' => 'required',
+            'link' => 'required',
+            'category_id' => 'required'
         ]);
 
-        // Create Category
-        $category = new Category;
-        $category->name = $request->input('name');
-        $category->save();
+        // Create Resource
+        $resource = new Resource;
+        $resource->title = $request->input('title');
+        $resource->link = $request->input('link');
+        $resource->category_id = $request->input('category_id');
+        $resource->save();
 
-        return redirect('/categories')->with('success', 'Category Created');
+        return redirect('/')->with('success', 'Resource Created');
     }
 
     /**
@@ -66,8 +72,8 @@ class CategoriesController extends Controller
      */
     public function show($id)
     {
-        $category = Category::find($id);
-        return view('categories.show')->with('category', $category);
+        $resource = Resource::find($id);
+        return view('resources.show')->with('resource', $resource);
     }
 
     /**
@@ -78,8 +84,8 @@ class CategoriesController extends Controller
      */
     public function edit($id)
     {
-        $category = Category::find($id);
-        return view('categories.edit')->with('category', $category);
+        $resource = Resource::find($id);
+        return view('resources.edit')->with('resource', $resource);
     }
 
     /**
@@ -92,15 +98,19 @@ class CategoriesController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'name' => 'required'
+            'title' => 'required',
+            'link' => 'required',
+            'category_id' => 'required'
         ]);
 
-        // Update Employee
-        $category = Employee::find($id);
-        $category->name = $request->input('name');
-        $category->save();
+        // Create Resource
+        $resource = Resource::find($id);
+        $resource->title = $request->input('title');
+        $resource->link = $request->input('link');
+        $resource->category_id = $request->input('category_id');
+        $resource->save();
 
-        return redirect('/categories')->with('success', 'Category Updated');
+        return redirect('/')->with('success', 'Resource Created');
     }
 
     /**
@@ -111,9 +121,9 @@ class CategoriesController extends Controller
      */
     public function destroy($id)
     {
-        $category = Category::find($id);
-        $category->delete();
+        $resource = Resource::find($id);
+        $resource->delete();
 
-        return redirect('/categories')->with('success', 'Category Removed');
+        return redirect('/')->with('success', 'Resource Removed');
     }
 }

@@ -13,8 +13,15 @@
 
 Route::get('/', 'PagesController@index');
 
-Route::get('/resources', 'PagesController@resources');
-
 Route::get('/helpdesk', 'PagesController@helpdesk');
 
 Route::get('/directory', 'PagesController@directory');
+
+Route::resource('categories', 'CategoriesController');
+
+Route::resource('employees', 'EmployeesController');
+Auth::routes();
+
+Route::get('/dashboard', 'DashboardController@index');
+
+Route::resource('resources', 'ResourcesController');

@@ -46,7 +46,7 @@ return [
             'database' => env('DB_DATABASE', 'intranet'),
             'username' => env('DB_USERNAME', 'root'),
             'password' => env('DB_PASSWORD', 'mrRabbitRocks96'),
-            'unix_socket' => env('DB_SOCKET', ''),
+            'unix_socket' => env('DB_SOCKET', '/Applications/mampstack-7.0.23-0/mysql/tmp/mysql.sock'),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',

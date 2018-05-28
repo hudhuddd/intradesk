@@ -1,7 +1,3 @@
-{{--    CODE FOR HAVING CREATE EMPLOYEE IN NAV BAR ON RIGHT
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="/employees/create">Create Employee</a></li>
-        </ul>--}}
 {{--    CODE FOR HAVING SEARCH BAR
         <form class="form-inline mt-2 mt-md-0">
             <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
@@ -11,9 +7,7 @@
 
 <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
     <div class="container">
-        <a class="navbar-brand" href="{{ url('/') }}">
-            {{ config('app.name', 'Intradesk') }}
-        </a>
+        <a href="/" class="navbar-left"><img src="{{url('/images/csumb.jpg')}}"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -32,7 +26,10 @@
                     <a class="nav-link" href="/employees">Directory</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/helpdesk">Helpdesk</a>
+                    <a class="nav-link" href="/holidays">Company Holidays</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/tickets">Helpdesk</a>
                 </li>
             </ul>
 
@@ -41,11 +38,11 @@
                 <!-- Authentication Links -->
                 @guest
                     <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
-                    <li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
+                    {{--<li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>--}}
                 @else
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }} <span class="caret"></span>
+                            {{ Auth::user()->name }}
                         </a>
 
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">

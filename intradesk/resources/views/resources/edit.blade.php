@@ -14,7 +14,7 @@
         {{Form::text('category_id', $resource->category_id, ['class' => 'form-control', 'placeholder' => 'Category Id'])}}
 
     </div>
-    <a href="/resources" class="btn btn-outline-secondary float-left">Go Back</a>
+    <a href="/" class="btn btn-outline-secondary float-left">Go Back</a>
     {{Form::hidden('_method', 'PUT')}}
     {{Form::submit('Submit', ['class' =>'btn btn-primary float-right'])}}
     {!! Form::close() !!}

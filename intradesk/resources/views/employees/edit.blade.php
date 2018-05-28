@@ -19,6 +19,18 @@
         {{Form::label('department', 'Department')}}
         {{Form::text('department', $employee->department, ['min' => 0, 'class' => 'form-control', 'placeholder' => 'Department'])}}
 
+        {{Form::label('cell', 'Cell')}}
+        {{Form::text('cell', $employee->cell, ['min' => 0, 'class' => 'form-control', 'placeholder' => 'Cell'])}}
+
+        {{Form::label('birthmonth', 'Birth Month')}}
+        {{Form::text('birthday', $employee->birthmonth, ['min' => 0, 'class' => 'form-control', 'placeholder' => 'Birth Month'])}}
+
+        {{Form::label('birthday', 'Birth Day')}}
+        {{Form::number('birthday', $employee->birthday, ['min' => 0, 'class' => 'form-control', 'placeholder' => 'Birth Day'])}}
+
+        {{Form::label('license', 'License')}}
+        {{Form::text('license', $employee->license, ['min' => 0, 'class' => 'form-control', 'placeholder' => 'License'])}}
+
     </div>
     <a href="/employees" class="btn btn-outline-secondary float-left">Go Back</a>
 

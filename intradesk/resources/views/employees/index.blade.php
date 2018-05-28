@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-    <h1>Directory</h1>
+    <h1><center>Directory</center></h1>
     @if(count($employees) > 0)
         <ul class ="list-group">
         @foreach($employees as $employee)
@@ -14,7 +14,9 @@
                         @endif
                     </h6>
                     <h5>{{$employee->email}}</h5>
+                    <h6>{{$employee->department}}</h6>
                     <h6>Ext: {{$employee->ext}}</h6>
+                    <h6>Cell: {{$employee->cell}}</h6>
                 </li>
             </div>
         @endforeach

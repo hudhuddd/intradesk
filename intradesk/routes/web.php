@@ -13,8 +13,6 @@
 
 Route::get('/', 'PagesController@index');
 
-Route::get('/helpdesk', 'PagesController@helpdesk');
-
 Route::get('/directory', 'PagesController@directory');
 
 Route::resource('categories', 'CategoriesController');
@@ -25,3 +23,7 @@ Auth::routes();
 Route::get('/dashboard', 'DashboardController@index');
 
 Route::resource('resources', 'ResourcesController');
+
+Route::resource('tickets', 'TicketsController');
+
+Route::resource('holidays', 'HolidaysController');

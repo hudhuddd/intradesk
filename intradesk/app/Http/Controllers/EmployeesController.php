@@ -50,7 +50,12 @@ class EmployeesController extends Controller
             'firstName' => 'required',
             'lastName' => 'required',
             'email' => 'required',
-            'ext' => 'required'
+            'ext' => 'required',
+            'department' => 'required',
+            'cell' => 'required',
+            'birthmonth' => 'required',
+            'birthday' => 'required',
+            'license' => 'required'
         ]);
 
         // Create Employee
@@ -59,6 +64,11 @@ class EmployeesController extends Controller
         $employee->lastName = $request->input('lastName');
         $employee->email = $request->input('email');
         $employee->ext = $request->input('ext');
+        $employee->department = $request->input('department');
+        $employee->cell = $request->input('cell');
+        $employee->birthmonth = $request->input('birthmonth');
+        $employee->birthday = $request->input('birthday');
+        $employee->license = $request->input('license');
         $employee->save();
 
         return redirect('/employees')->with('success', 'Employee Created');
@@ -103,7 +113,11 @@ class EmployeesController extends Controller
             'lastName' => 'required',
             'email' => 'required',
             'ext' => 'required',
-            'department' => 'required'
+            'department' => 'required',
+            'cell' => 'required',
+            'birthmonth' => 'required',
+            'birthday' => 'required',
+            'license' => 'required'
         ]);
 
         // Update Employee
@@ -113,6 +127,11 @@ class EmployeesController extends Controller
         $employee->email = $request->input('email');
         $employee->ext = $request->input('ext');
         $employee->department = $request->input('department');
+        $employee->cell = $request->input('cell');
+        $employee->birthmonth = $request->input('birthmonth');
+        $employee->birthday = $request->input('birthday');
+        $employee->license = $request->input('license');
+
         $employee->save();
 
         return redirect('/employees')->with('success', 'Employee Updated');

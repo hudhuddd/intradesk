@@ -15,6 +15,9 @@
     <h4>{{$employee->email}}</h4>
     <h4>Department: {{$employee->department}}</h4>
     <h5>Ext: {{$employee->ext}}</h5>
+    <h5>Cell: {{$employee->cell}}</h5>
+    <h5>Birthday: {{$employee->birthmonth}} {{$employee->birthday}}</h5>
+    <h5>License Plate: {{$employee->license}}</h5>
     <hr>
 
     <a href="/employees" class="btn btn-outline-secondary">Go Back</a>

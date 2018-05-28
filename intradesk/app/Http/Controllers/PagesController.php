@@ -3,7 +3,6 @@
 namespace Intradesk\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Intradesk\Category;
 use Intradesk\Resource;
 
 class PagesController extends Controller
@@ -12,12 +11,6 @@ class PagesController extends Controller
     {
         $resources = Resource::all()->load('category');
         return view('pages.index')->with('resources', $resources);
-    }
-
-    public function helpdesk()
-    {
-        $title = 'Helpdesk';
-        return view('pages.helpdesk', compact('title'));
     }
 
 }

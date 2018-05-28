@@ -16,6 +16,21 @@
         {{Form::label('ext', 'Ext')}}
         {{Form::number('ext', '', ['min' => 0, 'class' => 'form-control', 'placeholder' => 'Ext'])}}
 
+        {{Form::label('department', 'Department')}}
+        {{Form::text('department', '', ['class' => 'form-control', 'placeholder' => 'Department'])}}
+
+        {{Form::label('cell', 'Cell')}}
+        {{Form::text('cell', '', ['class' => 'form-control', 'placeholder' => 'Cell'])}}
+
+        {{Form::label('birthmonth', 'Birth Month')}}
+        {{Form::text('birthmonth', '', ['class' => 'form-control', 'placeholder' => 'Birth Month'])}}
+
+        {{Form::label('birthday', 'Cell')}}
+        {{Form::number('birthday', '', ['min' => 0, 'class' => 'form-control', 'placeholder' => 'Birth Day'])}}
+
+        {{Form::label('license', 'License')}}
+        {{Form::text('license', '', ['class' => 'form-control', 'placeholder' => 'License'])}}
+
     </div>
     {{Form::submit('Submit', ['class' =>'btn btn-primary'])}}
     {!! Form::close() !!}

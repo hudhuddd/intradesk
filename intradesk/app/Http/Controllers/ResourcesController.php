@@ -4,6 +4,7 @@ namespace Intradesk\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Intradesk\Resource;
+use Intradesk\Category;
 
 
 class ResourcesController extends Controller
@@ -36,8 +37,13 @@ class ResourcesController extends Controller
      */
     public function create()
     {
-        return view('resources.create');
-
+        $cats = array();
+        $categories = Category::all();
+        foreach($categories as $category)
+        {
+            $cats[$category->id] = $category->name;
+        }
+        return view('resources.create')->with('categories', $cats);
     }
 
     /**

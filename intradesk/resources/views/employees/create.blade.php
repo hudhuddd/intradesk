@@ -25,7 +25,7 @@
         {{Form::label('birthmonth', 'Birth Month')}}
         {{Form::text('birthmonth', '', ['class' => 'form-control', 'placeholder' => 'Birth Month'])}}
 
-        {{Form::label('birthday', 'Cell')}}
+        {{Form::label('birthday', 'Birth Day')}}
         {{Form::number('birthday', '', ['min' => 0, 'class' => 'form-control', 'placeholder' => 'Birth Day'])}}
 
         {{Form::label('license', 'License')}}

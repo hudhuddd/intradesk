@@ -15,7 +15,7 @@ class AddCellToEmployees extends Migration
     {
         Schema::table('employees', function($table)
         {
-            $table->integer('cell');
+            $table->string('cell');
         });
     }
 

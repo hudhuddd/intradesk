@@ -10,8 +10,8 @@
         {{Form::label('link', 'Link')}}
         {{Form::text('link', '', ['class' => 'form-control', 'placeholder' => 'Link'])}}
 
-        {{Form::label('category_id', 'Category Id')}}
-        {{Form::text('category_id', '', ['class' => 'form-control', 'placeholder' => 'category_id'])}}
+        {{Form::label('category_id', 'Category')}}
+        {{Form::select('category_id', $categories, null, ['class' => 'form-control'])}}
 
     </div>
     {{Form::submit('Submit', ['class' =>'btn btn-primary'])}}

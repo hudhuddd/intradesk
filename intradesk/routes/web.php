@@ -24,6 +24,15 @@ Route::get('/dashboard', 'DashboardController@index');
 
 Route::resource('resources', 'ResourcesController');
 
-Route::resource('tickets', 'TicketsController');
+//Route::resource('tickets', 'TicketsController');
+//Route::get('tickets','TicketsController@index');
+//Route::get('/tickets/create', 'TicketsController@create');
+//Route::post('/tickets/store', 'TicketsController@store');
+//Route::post('/tickets', 'TicketsController@sendTicket');
+
+Route::get('/tickets', 'HelpdeskController@create');
+Route::post('/tickets', [
+    'uses' => 'HelpdeskController@store',
+    'as' => 'tickets.store']);
 
 Route::resource('holidays', 'HolidaysController');

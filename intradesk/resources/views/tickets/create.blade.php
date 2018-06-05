@@ -2,25 +2,43 @@
 
 @section('content')
     <h1>Create Ticket</h1>
-    {!! Form::open(['action' => 'TicketsController@store', 'method' => 'POST']) !!}
-    <div class="form-group">
-        {{Form::label('title', 'Title')}}
-        {{Form::text('title', '', ['class' => 'form-control', 'placeholder' => 'Title'])}}
 
-        {{Form::label('client_id', 'Client ID')}}
-        {{Form::number('client_id', '', ['min' => 0, 'class' => 'form-control', 'placeholder' => 'Company ID'])}}
+    @if (Session::has('flash_message'))
+        <div class="alert alert-success">{{ Session::get('flash_message') }}</div>
+    @endif
+    <form method="post" action="{{route('tickets.store')}}">
+        {{csrf_field()}}
 
-        {{Form::label('email', 'Email')}}
-        {{Form::text('email', '', ['class' => 'form-control', 'placeholder' => 'Email'])}}
+        <div class="form-group">
+            <label>Title: </label>
+            <input type="text" class='form-control' name="title">
+            @if ($errors->has('title'))
+                <small class="form-text invalid-feedback">{{ $errors->first('title') }}</small>
+            @endif
+        </div>
 
-        {{Form::label('urgency', 'Urgency')}}
-        {{Form::select('urgency', ['Informational', 'Low', 'Medium', 'High', 'Emergency'], null, ['class' => 'form-control'])}}
+        <div class="form-group">
+            <label>Email: </label>
+            <input type="text" class='form-control' name="email">
+        </div>
 
-        {{Form::label('message', 'Message')}}
-        {{Form::textarea('message', '', ['class' => 'form-control', 'placeholder' => 'Message'])}}
+        <div class="form-group">
+            <label>Urgency: </label>
+            <select class="form-control" name="urgency">
+                <option>Informational</option>
+                <option>Low</option>
+                <option>Medium</option>
+                <option>High</option>
+                <option>Emergency</option>
+            </select>
+        </div>
 
-    </div>
-    {{Form::submit('Submit', ['class' =>'btn btn-primary'])}}
-    {!! Form::close() !!}
+        <div class="form-group">
+            <label>Message: </label>
+            <textarea class='form-control' name="message"></textarea>
+        </div>
+
+        <button class="btn btn-primary">Submit</button>
+
+    </form>
 @endsection
-

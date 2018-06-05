@@ -17,6 +17,8 @@ class CreateResourcesTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->string('link');
+            $table->integer('category_id')->unsigned();
+            $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();
         });
     }
@@ -28,6 +30,7 @@ class CreateResourcesTable extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('resources');
     }
 }
